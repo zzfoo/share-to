@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify ./index.js > ./dist/shareTo.js -s shareTo && uglifyjs -c -m -o ./dist/shareTo.min.js -- ./dist/shareTo.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/zzfoo/share-to/issues"
   },
-  "homepage": "https://github.com/zzfoo/share-to#readme"
+  "homepage": "https://github.com/zzfoo/share-to#readme",
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "uglifyjs": "^2.4.11"
+  }
 }
